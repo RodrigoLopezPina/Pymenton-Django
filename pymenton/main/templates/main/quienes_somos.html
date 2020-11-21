@@ -1,0 +1,79 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pymenton</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link rel="stylesheet" href="{% static '/triplebcss.css'%}">
+  <link rel="stylesheet" href="{% static '/w3.css'%}">
+  <script src={% static "/js/jquery-3.5.1.min.js" %}></script>
+  <script src={% static "/js/app.js" %}></script>
+</head>
+
+<body>
+ 
+  <div class="w3-sidebar w3-bar-block w3-pale-red w3-card w3-animate-left" style="display:none" id="mySidebar">
+    <button class="w3-bar-item w3-button  w3-large" onclick="w3_close()">Cerrar &times;</button>
+    <h3 onclick="location.href='/home/'" class="w3-bar-item w3-button" style="color:white;"> Home </h3>
+    <h3 onclick="location.href=''" class="w3-bar-item w3-button" style="color:white;">Prestigio</h3>
+    <h3 onclick="location.href=''" class="w3-bar-item w3-button" style="color: white;">USM</h3>
+    <h3 onclick="location.href='/home/quienes_somos'"class="w3-bar-item w3-button" style="color: white;">¿Quienes Somos?</h3>
+  </div>
+  
+  <!--Barra registrate -->
+  <div id="main"></div>
+  <div class="w3-pale-red">
+    <button id="openNav" class="w3-button w3-pale-red w3-xlarge" onclick="w3_open()">&#9776;</button>
+    <div class="w3-container">
+      <img src="{%static 'img/logo pymenton3.png'%}" alt="Py1" style="width:4%" >
+      <font id="titulo" color=yellow size=6 face="Times New Romans">Pymenton.cl</font>
+
+      <!--Boton registrate-->
+      <input type="button" value="Registrate" style ="float: right;" onclick="location.href='/home/login'">
+
+    </div>
+  </div>
+  
+  <script>
+    function w3_open() {
+      document.getElementById("main").style.marginLeft = "25%";
+      document.getElementById("mySidebar").style.width = "25%";
+      document.getElementById("mySidebar").style.display = "block";
+      document.getElementById("openNav").style.display = 'none';
+    }
+    function w3_close() {
+      document.getElementById("main").style.marginLeft = "0%";
+      document.getElementById("mySidebar").style.display = "none";
+      document.getElementById("openNav").style.display = "inline-block";
+    }
+  </script>
+
+  <div style = "float: left;" >
+    <img src="{%static 'img/am.jpg'%}"  style="width:20%; margin: 2%; padding: 0px 20px 0px;">
+    <img src="{%static 'img/rv.jpg'%}"  style=" width:34%; margin: 2%; padding: 0px 140px 0px;">
+    <img src="{%static 'img/rl.jpg'%}"  style="width:22%; margin: 2%; padding: 0px 40px 0px;">
+  </div>
+  <div class="w3-container">
+    <table class="w3-table">
+      <tr>
+        <th style="color: blue">Alonso Maureira</th>
+        <th style="color: purple">Rodrigo Vera</th>
+        <th style="color: #56070C">Rodrigo López</th>
+      </tr>
+      <tr>
+        <td><div class="w3-container w3-teal"><p>Mi nombre es Alonso Maureira, estudiante de ingeniería civil informática, con este proyecto pretendo fortalecer el 
+        trabajo en grupo, adquirir nuevos conocimientos en lo que es desarrollo web, para así poder lograr en conjunto un producto que pueda ser util,facil de usar 
+        y amigable para la mayor cantidad de personas posibles, además de estar solucionando alguna problemática general que exista. </p></div></td>
+        <td><div class="w3-container w3-teal"><p>Mi nombre es Rodrigo Vera, soy estudiante de Ingeniería Civil Informática y actualmente soy parte del grupo 1 en el 
+        proyecto de introducción a la ingeniería del año 2020, al cual intentaré sacarle el máximo provecho para poder aprender y desarrollar habilidades, tanto en 
+        la programación en diversos lenguajes como en el trabajo en equipo, en este caso todo apuntando hacia un foco utilidad.</p></div></td>
+        <td><div class="w3-container w3-teal"><p>Mi nombre es Rodrigo López, estudiante de ingeniería civil informática, y con este proyecto espero poder avanzar en 
+        mis aptitudes como programador, el poder aprender más del desarrollo web y javascript, y el trabajo en equipo, cosa de poder desarrollar algo que pueda ser 
+        de utilidad pública y que entregue una solución a algún problema, más enfocado en la educación o utilidad en general.</p></div></td>
+      </tr>
+    </table>
+  </div>
+</body>
+</html>

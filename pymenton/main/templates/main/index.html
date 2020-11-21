@@ -1,0 +1,96 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pymenton</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link rel="stylesheet" href="{% static '/triplebcss.css'%}">
+  <link rel="stylesheet" href="{% static '/w3.css'%}">
+  <script src={% static "/js/jquery-3.5.1.min.js" %}></script>
+  <script src={% static "/js/app.js" %}></script>
+</head>
+
+<body>
+ 
+  <!-- Barra Superior -->
+  <div class="w3-sidebar w3-bar-block w3-pale-red w3-card w3-animate-left" style="display:none" id="mySidebar">
+    <button class="w3-bar-item w3-button  w3-large" onclick="w3_close()">Cerrar &times;</button>
+    <h3 onclick="location.href='/home/'" class="w3-bar-item w3-button" style="color:white;"> Home </h3>
+    <h3 onclick="location.href=''" class="w3-bar-item w3-button" style="color:white;">Prestigio</h3>
+    <h3 onclick="location.href=''" class="w3-bar-item w3-button" style="color: white;">USM</h3>
+    <h3 onclick="location.href='quienes_somos'"class="w3-bar-item w3-button" style="color: white;">¿Quienes Somos?</h3>
+  </div>
+  
+  <!--Barra registrate -->
+  <div id="main"></div>
+  <div class="w3-pale-red">
+    <button id="openNav" class="w3-button w3-pale-red w3-xlarge" onclick="w3_open()">&#9776;</button>
+    <div class="w3-container">
+      <img src="{%static 'img/logo pymenton3.png'%}" alt="Py1" style="width:4%" >
+      <font id="titulo" color=yellow size=6 face="Times New Romans">Pymenton.cl</font>
+
+      <!--Boton registrate-->
+      <input type="button" value="Registrate" style ="float: right;" onclick="location.href='login'">
+
+    </div>
+  </div>
+
+  <script>
+    function w3_open() {
+      document.getElementById("main").style.marginLeft = "25%";
+      document.getElementById("mySidebar").style.width = "25%";
+      document.getElementById("mySidebar").style.display = "block";
+      document.getElementById("openNav").style.display = 'none';
+    }
+    function w3_close() {
+      document.getElementById("main").style.marginLeft = "0%";
+      document.getElementById("mySidebar").style.display = "none";
+      document.getElementById("openNav").style.display = "inline-block";
+    }
+  </script>
+  <!-- Barra Superior -->
+
+  <!-- Logo móvil -->
+  <svg viewBox="0 0 960 300">
+    <symbol id="s-text">
+      <text text-anchor="middle" x="50%" y="80%" class="w3-animate-zoom">PYMENTON</text>
+    </symbol>
+  
+    <g class = "g-ants">
+      <use xlink:href="#s-text" class="text-copy"></use>
+      <use xlink:href="#s-text" class="text-copy"></use>
+      <use xlink:href="#s-text" class="text-copy"></use>
+      <use xlink:href="#s-text" class="text-copy"></use>
+      <use xlink:href="#s-text" class="text-copy"></use>
+      <use xlink:href="#s-text" class="text-copy"></use>
+      <use xlink:href="#s-text" class="text-copy"></use>
+    </g>
+  </svg>
+  <!-- Logo móvil -->
+  
+  <!-- Barra De Busqueda.-->  
+
+
+  <form action="../form-result.php" target="_blank">
+
+    <p style= "text-align:center;">
+  
+      <input type="text" placeholder="¿Que Buscas?" name="Busqueda" style ="float: center; text-align: center;">
+  
+      <input type="submit" value="Buscar" style ="float: center; ">
+  
+    </p>
+  
+  </form>
+  
+  
+
+  <!-- Barra De Busqueda.-->
+    
+
+  
+  <img src="{%static 'img/logo pymenton.png'%}" alt="Py2" style="width:10%" id="logo_pymenton" class="w3-animate-zoom">
+</body>
+</html>
