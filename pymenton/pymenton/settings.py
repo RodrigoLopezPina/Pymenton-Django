@@ -27,7 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-STATICFILES_DIRS = ['C:/Users/Rigus/Documents/IWG101/prueba2/pymenton/main/templates/main/static']
+STATICFILES_DIRS = ['C:/Users/Rigus/Documents/IWG101/Pymenton-Django/pymenton/main/templates/main/static']
 
 
 # Application definition

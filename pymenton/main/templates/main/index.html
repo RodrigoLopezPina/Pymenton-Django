@@ -8,8 +8,18 @@
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   <link rel="stylesheet" href="{% static '/triplebcss.css'%}">
   <link rel="stylesheet" href="{% static '/w3.css'%}">
-  <script src={% static "/js/jquery-3.5.1.min.js" %}></script>
-  <script src={% static "/js/app.js" %}></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src={% static "js/jquery-2.1.0.min.js" %}></script>
+  <script src={% static "js/jquery-3.5.1.min.js" %}></script>
+  <script src={% static "js/app.js" %}></script>
+  
+  
+  <style>
+    #map{
+      width: 100%;
+      height: 400px;
+    }
+  </style>
 </head>
 
 <body>
@@ -88,9 +98,28 @@
   
 
   <!-- Barra De Busqueda.-->
-    
 
-  
+  <!-- Maps-->
+
+
+  <!-- Maps-->
+
+  <!-- Codigo mapa-->
+
+  <div id="container">
+    <div class="row">
+      <div class="col-md-6">
+        <input type="text" id="autocomplete" class="form-control">
+        <div id="map"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDpLdhPcl0Fer_Cry2bmfKAzXTKlfBLkQM&libraries=places"></script>
+  <script src={% static "/js/main.js" %}></script>
+  <script src={% static "/js/localizacion.js" %}></script>
+  <!-- Codigo mapa-->
+
   <img src="{%static 'img/logo pymenton.png'%}" alt="Py2" style="width:10%" id="logo_pymenton" class="w3-animate-zoom">
 </body>
 </html>
