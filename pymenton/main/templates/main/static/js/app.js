@@ -25,7 +25,7 @@ function localizar(elemento,direccion) {
             } else if (status === "OVER_QUERY_LIMIT" || status === "REQUEST_DENIED" || status === "UNKNOWN_ERROR") {
                 mensajeError = "Error general del mapa.";
             } else if (status === "INVALID_REQUEST") {
-                mensajeError = "Error de la web. Contacte con Name Agency.";
+                mensajeError = "Error de la web. Contacte con Pymenton.";
             }
             alert(mensajeError);
         }
@@ -35,8 +35,7 @@ function localizar(elemento,direccion) {
 $.getScript("https://maps.googleapis.com/maps/api/js?key=AIzaSyCWoCrz3TSv3kEaA_MstpeIfagivpPGiKw", function() {
     $("#buscar").click(function() {
         var direccion = $("#direccion").val();
-        if (direccion !== "") {
-            localizar("mapa-geocoder", direccion);
-        }
+        localizar("mapa-geocoder", direccion);
+        
     });
 });

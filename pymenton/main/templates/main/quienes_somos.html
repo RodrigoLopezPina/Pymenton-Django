@@ -50,17 +50,17 @@
     }
   </script>
 
-  <div style = "float: left;" >
+  <div style = "float: left;" align="center" >
     <img src="{%static 'img/am.jpg'%}"  style="width:20%; margin: 2%; padding: 0px 20px 0px;">
     <img src="{%static 'img/rv.jpg'%}"  style=" width:34%; margin: 2%; padding: 0px 140px 0px;">
     <img src="{%static 'img/rl.jpg'%}"  style="width:22%; margin: 2%; padding: 0px 40px 0px;">
   </div>
-  <div class="w3-container">
-    <table class="w3-table">
+
+    <table class="w3-table" style="text-align:center;">
       <tr>
-        <th style="color: blue">Alonso Maureira</th>
-        <th style="color: purple">Rodrigo Vera</th>
-        <th style="color: #56070C">Rodrigo López</th>
+        <th style="color: blue; text-align:center;">Alonso Maureira</th>
+        <th style="color: purple; text-align:center;">Rodrigo Vera</th>
+        <th style="color: #56070C; text-align:center;">Rodrigo López</th>
       </tr>
       <tr>
         <td><div class="w3-container w3-teal"><p>Mi nombre es Alonso Maureira, estudiante de ingeniería civil informática, con este proyecto pretendo fortalecer el 
@@ -75,113 +75,6 @@
       </tr>
     </table>
   </div>
-
-
-  <style>
-body,
-body * {
-	margin:0;
-	font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-
-.buscador {
-	text-align:center;
-	padding:30px 0px;
-}
-
-.buscador #direccion {
-	margin:10px auto;
-	width:100%;
-	padding:7px;
-	max-width:250px;
-}
-
-.buscador #buscar {
-	margin:0 auto;
-	max-width:250px;
-	padding:7px;
-	color:#FFFFFF;
-	background:#f2777a;
-	border:2px solid #f2777a;
-	cursor:pointer;
-}
-</style>
-</head>
-<body>
-
-<div class="buscador">
-	<h2>Ingrese una dirección</h2>
-    <input type="text" id="direccion">
-    <div id="buscar">Buscar</div>
-</div>
-
-<div id="mapa-geocoder" class="mapa" style="width:100%;display:block;position:absolute;background:#f2777a;"></div>
-
-<script src="assets/js/jquery-2.1.0.min.js"></script>
-<script>
-$(document).ready(function() {
-	$(window).on("load resize", function() {
-		var alturaBuscador = $(".buscador").outerHeight(true),
-			alturaVentana = $(window).height(),
-			alturaMapa = alturaVentana - alturaBuscador;
-		
-		$("#mapa-geocoder").css("height", alturaMapa+"px");
-	});
-});
-</script>
-
-<style>
-  body,
-  body * {
-    margin:0;
-    font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
-  }
-  
-  .buscador {
-    text-align:center;
-    padding:30px 0px;
-  }
-  
-  .buscador #direccion {
-    margin:10px auto;
-    width:150%;
-    padding:7px;
-    max-width:250px;
-  }
-  
-  .buscador #buscar {
-    margin:0 auto;
-    max-width:250px;
-    padding:7px;
-    color:#FFFFFF;
-    background:#f2777a;
-    border:2px solid #f2777a;
-    cursor:pointer;
-  }
-  </style>
-  </head>
-  <body>
-  
-  <div class="buscador">
-    <h2>Ingrese una dirección</h2>
-      <input type="text" id="direccion">
-      <div id="buscar">Buscar</div>
-  </div>
-  
-  <div id="mapa-geocoder" class="mapa" style="width:500px;display:block;position:static;background:#f2777a;"></div>
-  
-  <script src={% static "js/jquery-2.1.0.min.js" %}></script>
-  <script>
-  $(document).ready(function() {
-    $(window).on("load resize", function() {
-      var alturaBuscador = $(".buscador").outerHeight(true),
-        alturaVentana = $(window).height(500),
-        alturaMapa = alturaVentana - alturaBuscador;
-      
-      $("#mapa-geocoder").css("height", alturaMapa+"px");
-    });
-  });
-  </script>
 
 </body>
 </html>

@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Pymenton</title>
+    <link rel="stylesheet" href="{% static '/estilos.css'%}">
+</head>
+<body >
+
+    <div class="contenedor-form">
+        <div class="toggle">
+            <span> Crear Cuenta</span>
+        </div>
+        
+        <div class="formulario">
+            <h2>Iniciar Sesión</h2>
+            <form action="#">
+                <input type="text" placeholder="Usuario" required>
+                <input type="password" placeholder="Contraseña" required>
+                <input type="submit" value="Iniciar Sesión">
+            </form>
+        </div>
+        
+        <div class="formulario">
+            <h2>Crea tu Cuenta</h2>
+            <form action="#">
+                <input type="text" placeholder="Usuario" required>
+                
+                <input type="password" placeholder="Contraseña" required>
+
+                <input type="text" placeholder="Nombre PYME" required>
+                
+                <input type="text" placeholder="Categoria" required>
+
+                <input type="text" placeholder="Dirección" required>
+                
+                <input type="email" placeholder="Correo Electronico" required>
+
+                <input type="text" placeholder="Instagram" required>
+                
+                <input type="text" placeholder="Teléfono" required>
+                
+                <input type="submit" value="Registrarse">
+            </form>
+        </div>
+    </div> 
+    <script src={% static "/js/jquery-3.1.1.min.js" %}></script> 
+    <script src={% static "/js/main2.js" %}></script>
+</body>
+</html>

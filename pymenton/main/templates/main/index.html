@@ -8,7 +8,7 @@
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   <link rel="stylesheet" href="{% static '/triplebcss.css'%}">
   <link rel="stylesheet" href="{% static '/w3.css'%}">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  
   <script src={% static "js/jquery-2.1.0.min.js" %}></script>
   <script src={% static "js/jquery-3.5.1.min.js" %}></script>
   <script src={% static "js/app.js" %}></script>
@@ -80,46 +80,48 @@
   </svg>
   <!-- Logo móvil -->
   
-  <!-- Barra De Busqueda.-->  
+  <!-- Barra De Busqueda. -->  
 
+  <style>
+  .button-container form,
+  .button-container form div {
+    display: inline;
+  }
 
-  <form action="../form-result.php" target="_blank">
+  .button-container button {
+    display: inline;
+    vertical-align: middle;
+  }
+    #formulario {float:left; align:center;}
+    #formulario2 {float:right; align:center;}
+  </style>
 
-    <p style= "text-align:center;">
-  
-      <input type="text" placeholder="¿Que Buscas?" name="Busqueda" style ="float: center; text-align: center;">
-  
-      <input type="submit" value="Buscar" style ="float: center; ">
-  
-    </p>
-  
-  </form>
-  
+  <h2 style="text-align:center; text-shadow:1px 1px 0 #444; color:purple;" font-family: "Bodoni"><em><strong>Busca Tu Pyme Aquí! 🡳</strong></em></h2>
+  <p></p>
+  <p></p>
+  <div class="button-container" align="center">
+    <form action ="/resultado_busqueda/" method ="GET" style= "text-align:center">
+      
+      <input type= "text" name = "prd" placeholder="Nombre de la Pyme" style="text-align:center" > 
+      
+      
+      <input type="submit" value="Buscar">
+      
+    </form>
+    <form action ="/resultado_busqueda2/" method ="GET" style= "text-align:center">
+      
+      <input type= "text" name = "prb" placeholder="Categoría" style="text-align:center"> 
+      
+      
+      <input type="submit" value="Buscar">
+
+    </form>
+  </div>
   
 
   <!-- Barra De Busqueda.-->
 
-  <!-- Maps-->
-
-
-  <!-- Maps-->
-
-  <!-- Codigo mapa-->
-
-  <div id="container">
-    <div class="row">
-      <div class="col-md-6">
-        <input type="text" id="autocomplete" class="form-control">
-        <div id="map"></div>
-      </div>
-    </div>
-  </div>
-
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDpLdhPcl0Fer_Cry2bmfKAzXTKlfBLkQM&libraries=places"></script>
-  <script src={% static "/js/main.js" %}></script>
-  <script src={% static "/js/localizacion.js" %}></script>
-  <!-- Codigo mapa-->
-
-  <img src="{%static 'img/logo pymenton.png'%}" alt="Py2" style="width:10%" id="logo_pymenton" class="w3-animate-zoom">
+  <p></p>
+  <img src="{%static 'img/logo pymenton.png'%}" alt="Py2" style="width:10%" id="logo_pymenton" class="w3-animate-zoom";>
 </body>
 </html>
