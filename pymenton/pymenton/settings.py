@@ -9,8 +9,9 @@ https://docs.djangoproject.com/en/3.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
-
 from pathlib import Path
+from django.urls import reverse_lazy
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -28,6 +29,9 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 STATICFILES_DIRS = ['C:/Users/Rigus/Documents/IWG101/Pymenton-Django/pymenton/main/templates/main/static']
+
+LOGIN_REDIRECT_URL = reverse_lazy('index2')
+LOGOUT_REDIRECT_URL = reverse_lazy('loginn')
 
 
 # Application definition
@@ -80,7 +84,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'pymentondb',
-        'USER': 'postgres',
+        'USER': 'postgres', 
         'PASSWORD': '123',
         'HOST': '127.0.0.1',
         'DATABASE_PORT': '5432',

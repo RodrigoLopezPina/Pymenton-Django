@@ -1,18 +1,18 @@
-function localizar(elemento,direccion) {
+function localizar(elemento, direccion) {
     var geocoder = new google.maps.Geocoder();
 
     var map = new google.maps.Map(document.getElementById(elemento), {
-      zoom: 16,
-      scrollwheel: true,
-      mapTypeId: google.maps.MapTypeId.ROADMAP
+        zoom: 16,
+        scrollwheel: true,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
     });
-    
-    geocoder.geocode({'address': direccion}, function(results, status) {
+
+    geocoder.geocode({ 'address': direccion }, function(results, status) {
         if (status === 'OK') {
             var resultados = results[0].geometry.location,
                 resultados_lat = resultados.lat(),
                 resultados_long = resultados.lng();
-            
+
             map.setCenter(results[0].geometry.location);
             var marker = new google.maps.Marker({
                 map: map,
@@ -32,10 +32,11 @@ function localizar(elemento,direccion) {
     });
 }
 
-$.getScript("https://maps.googleapis.com/maps/api/js?key=AIzaSyCWoCrz3TSv3kEaA_MstpeIfagivpPGiKw", function() {
+$.getScript("https://maps.googleapis.com/maps/api/js?key=AIzaSyDpLdhPcl0Fer_Cry2bmfKAzXTKlfBLkQM", function() {
     $("#buscar").click(function() {
+
         var direccion = $("#direccion").val();
         localizar("mapa-geocoder", direccion);
-        
+
     });
 });
