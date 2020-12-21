@@ -29,6 +29,12 @@ ALLOWED_HOSTS = []
 
 STATICFILES_DIRS = ['C:/Users/Rigus/Documents/IWG101/Pymenton-Django/pymenton/main/templates/main/static']
 
+<<<<<<< Updated upstream
+=======
+LOGIN_REDIRECT_URL = reverse_lazy('index2')
+LOGOUT_REDIRECT_URL = reverse_lazy('index')
+
+>>>>>>> Stashed changes
 
 # Application definition
 
@@ -102,6 +108,15 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+from django.contrib.messages import constants as messages
+
+MESSAGE_TAGS = {
+    messages.DEBUG: 'alert-info',
+    messages.INFO: 'alert-info',
+    messages.SUCCESS: 'alert-success',
+    messages.WARNING: 'alert-warning',
+    messages.ERROR: 'alert-danger',
+}
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/

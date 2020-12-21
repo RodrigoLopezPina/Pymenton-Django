@@ -1,0 +1,186 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pymenton</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link rel="stylesheet" href="{% static '/triplebcss.css'%}">
+  <link rel="stylesheet" href="{% static '/w3.css'%}">
+  
+  <script src={% static "js/jquery-2.1.0.min.js" %}></script>
+  <script src={% static "js/jquery-3.5.1.min.js" %}></script>
+  <script src={% static "js/app.js" %}></script>
+  
+  <style type="text/css">
+    .boton_personalizado{
+      text-decoration: none;
+      padding: 10px;
+      font-weight: 600;
+      font-size: 20px;
+      color: #ffffff;
+      background-color: #8A2BE2;
+      border-radius: 6px;
+      border: 2px solid #0016b0;
+    }
+    .boton_personalizado:hover{
+      color: #1883ba;
+      background-color: #4B0082;
+    }
+  </style>
+
+  <style type="text/css">
+    #boton_personalizado{
+      text-decoration: none;
+      padding: 5px;
+      font-weight: 600;
+      font-size: 15px;
+      color: #ffffff;
+      background-color: #8A2BE2;
+      border-radius: 6px;
+      border: 2px solid #0016b0;
+    }
+    #boton_personalizado:hover{
+      color: #1883ba;
+      background-color: #4B0082;
+    }
+  </style>
+  
+  <style>
+    #map{
+      width: 100%;
+      height: 400px;
+    }
+  </style>
+</head>
+
+<body>
+ 
+  <!-- Barra Superior -->
+  <div class="w3-sidebar w3-bar-block w3-pale-red w3-card w3-animate-left" style="display:none" id="mySidebar">
+    <button class="w3-bar-item w3-button  w3-large" onclick="w3_close()">Cerrar &times;</button>
+    <h3 onclick="location.href='/h0me/'" class="w3-bar-item w3-button" style="color:white;"> Home </h3>
+    <h3 onclick="location.href='https://instagram.fscl21-1.fna.fbcdn.net/v/t51.2885-15/e35/123409287_382263942827260_2392762376971655070_n.jpg?_nc_ht=instagram.fscl21-1.fna.fbcdn.net&_nc_cat=104&_nc_ohc=HiiISEMMGfUAX-BnpJO&tp=1&oh=e35566c9cdd20ea50e54a4f7281f0746&oe=60097F64'" class="w3-bar-item w3-button" style="color:white;">Prestigio</h3>
+    <h3 onclick="location.href='https://usm.cl/'" class="w3-bar-item w3-button" style="color: white;">USM</h3>
+    <h3 onclick="location.href='/quienes_somos2'"class="w3-bar-item w3-button" style="color: white;">¿Quienes Somos?</h3>
+  </div>
+  
+  <!--Barra registrate -->
+  <div id="main"></div>
+  <div class="w3-pale-red">
+    <button id="openNav" class="w3-button w3-pale-red w3-xlarge" onclick="w3_open()">&#9776;</button>
+    <div class="w3-container">
+      <img src="{%static 'img/logo pymenton3.png'%}" alt="Py1" style="width:4%" >
+      <font id="titulo" color=yellow size=6 face="Roboto">Pymenton.cl</font>
+
+      <!--Boton registrate-->
+     <input type="button" value="Logout" style ="float: right;" onclick="location.href='/logout'" id ="boton_personalizado">
+
+    </div>
+  </div>
+
+  <script>
+    function w3_open() {
+      document.getElementById("main").style.marginLeft = "25%";
+      document.getElementById("mySidebar").style.width = "25%";
+      document.getElementById("mySidebar").style.display = "block";
+      document.getElementById("openNav").style.display = 'none';
+    }
+    function w3_close() {
+      document.getElementById("main").style.marginLeft = "0%";
+      document.getElementById("mySidebar").style.display = "none";
+      document.getElementById("openNav").style.display = "inline-block";
+    }
+  </script>
+
+  <style>
+  h2 {
+    animation-duration: 1.5s;
+    animation-name: slidein;
+  }
+
+  @keyframes slidein {
+    from {
+      margin-left: 100%;
+      width: 300%
+    }
+
+    to {
+      margin-left: 0%;
+      width: 100%;
+    }
+  }
+  </style>
+
+
+  <!-- Barra Superior -->
+  <h2 align="left" style="text-shadow:1px 1px 0 #444; color:purple;" font-family: "Bodoni">   BIENVENID@  {{request.user.username}}   </h2>
+
+  <!-- Logo móvil -->
+  <svg viewBox="0 0 960 300">
+    <symbol id="s-text">
+      <text text-anchor="middle" x="50%" y="80%" class="w3-animate-zoom">PYMENTON</text>
+    </symbol>
+  
+    <g class = "g-ants">
+      <use xlink:href="#s-text" class="text-copy"></use>
+      <use xlink:href="#s-text" class="text-copy"></use>
+      <use xlink:href="#s-text" class="text-copy"></use>
+      <use xlink:href="#s-text" class="text-copy"></use>
+      <use xlink:href="#s-text" class="text-copy"></use>
+      <use xlink:href="#s-text" class="text-copy"></use>
+      <use xlink:href="#s-text" class="text-copy"></use>
+    </g>
+  </svg>
+  <!-- Logo móvil -->
+  
+  <!-- Barra De Busqueda. -->  
+
+  <style>
+  .button-container form,
+  .button-container form div {
+    display: inline;
+  }
+
+  .button-container button {
+    display: inline;
+    vertical-align: middle;
+  }
+    #formulario {float:left; align:center;}
+    #formulario2 {float:right; align:center;}
+  </style>
+
+  
+  
+  <h2 style="text-align:center; text-shadow:1px 1px 0 #444; color:purple;" font-family: "Bodoni"><em><strong>Registra Tu Pyme!</strong></em></h2>
+  <div align='center'><input type="button"  value="Registrar Pyme" style ="float: center;" onclick="location.href='/registropyme'" class ="boton_personalizado"></div>
+  <h2 style="text-align:center; text-shadow:1px 1px 0 #444; color:purple;" font-family: "Bodoni"><em><strong>🡳 Busca Tu Pyme Aquí! 🡳</strong></em></h2>
+  <p></p>
+  <p></p>
+  <div class="button-container" align="center">
+    <form action ="/resultado_busqueda3/" method ="GET" style= "text-align:center">
+      
+      <input type= "text" name = "prd" placeholder="Nombre de la Pyme" style="text-align:center" > 
+      
+      
+      <input type="submit" value="Buscar">
+      
+    </form>
+    <form action ="/resultado_busqueda4/" method ="GET" style= "text-align:center">
+      
+      <input type= "text" name = "prb" placeholder="Categoría" style="text-align:center"> 
+      
+      
+      <input type="submit" value="Buscar">
+
+    </form>
+  </div>
+  
+
+  <!-- Barra De Busqueda.-->
+
+  <p></p>
+  <img src="{%static 'img/logo pymenton.png'%}" alt="Py2" style="width:10%" id="logo_pymenton" class="w3-animate-zoom";>
+</body>
+</html>

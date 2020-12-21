@@ -20,7 +20,61 @@
       height: 400px;
     }
   </style>
+
+  <style>
+    h2 {
+      animation-duration: 1.5s;
+      animation-name: slidein;
+    }
+
+    @keyframes slidein {
+      from {
+        margin-left: 100%;
+        width: 300%
+      }
+
+      to {
+        margin-left: 0%;
+        width: 100%;
+      }
+    }
+  </style>
+
 </head>
+
+<style type="text/css">
+  .boton_personalizado{
+    text-decoration: none;
+    padding: 10px;
+    font-weight: 600;
+    font-size: 20px;
+    color: #ffffff;
+    background-color: #8A2BE2;
+    border-radius: 6px;
+    border: 2px solid #0016b0;
+  }
+  .boton_personalizado:hover{
+    color: #1883ba;
+    background-color: #4B0082;
+  }
+</style>
+
+<style type="text/css">
+  #boton_personalizado{
+    text-decoration: none;
+    padding: 5px;
+    font-weight: 600;
+    font-size: 15px;
+    color: #ffffff;
+    background-color: #8A2BE2;
+    border-radius: 6px;
+    border: 2px solid #0016b0;
+  }
+  #boton_personalizado:hover{
+    color: #1883ba;
+    background-color: #4B0082;
+  }
+</style>
 
 <body>
  
@@ -28,8 +82,8 @@
   <div class="w3-sidebar w3-bar-block w3-pale-red w3-card w3-animate-left" style="display:none" id="mySidebar">
     <button class="w3-bar-item w3-button  w3-large" onclick="w3_close()">Cerrar &times;</button>
     <h3 onclick="location.href='/home/'" class="w3-bar-item w3-button" style="color:white;"> Home </h3>
-    <h3 onclick="location.href=''" class="w3-bar-item w3-button" style="color:white;">Prestigio</h3>
-    <h3 onclick="location.href=''" class="w3-bar-item w3-button" style="color: white;">USM</h3>
+    <h3 onclick="location.href='https://instagram.fscl21-1.fna.fbcdn.net/v/t51.2885-15/e35/123409287_382263942827260_2392762376971655070_n.jpg?_nc_ht=instagram.fscl21-1.fna.fbcdn.net&_nc_cat=104&_nc_ohc=HiiISEMMGfUAX-BnpJO&tp=1&oh=e35566c9cdd20ea50e54a4f7281f0746&oe=60097F64'" class="w3-bar-item w3-button" style="color:white;">Prestigio</h3>
+    <h3 onclick="location.href='https://usm.cl/'" class="w3-bar-item w3-button" style="color: white;">USM</h3>
     <h3 onclick="location.href='quienes_somos'"class="w3-bar-item w3-button" style="color: white;">¿Quienes Somos?</h3>
   </div>
   
@@ -37,12 +91,17 @@
   <div id="main"></div>
   <div class="w3-pale-red">
     <button id="openNav" class="w3-button w3-pale-red w3-xlarge" onclick="w3_open()">&#9776;</button>
-    <div class="w3-container">
+    <div class="w3-container" >
       <img src="{%static 'img/logo pymenton3.png'%}" alt="Py1" style="width:4%" >
-      <font id="titulo" color=yellow size=6 face="Times New Romans">Pymenton.cl</font>
+      <font id="titulo" color=yellow size=6 face="Roboto">Pymenton.cl</font>
 
       <!--Boton registrate-->
+<<<<<<< Updated upstream
       <input type="button" value="Registrate" style ="float: right;" onclick="location.href='login'">
+=======
+      
+      <input type="button" value="Login" style ="float: right;" onclick="location.href='/loginn'" id ="boton_personalizado">
+>>>>>>> Stashed changes
 
     </div>
   </div>
@@ -83,6 +142,7 @@
   <!-- Barra De Busqueda.-->  
 
 
+<<<<<<< Updated upstream
   <form action="../form-result.php" target="_blank">
 
     <p style= "text-align:center;">
@@ -95,6 +155,31 @@
   
   </form>
   
+=======
+  <h2 style="text-align:center; text-shadow:1px 1px 0 #444; color:purple;" font-family: "Bodoni"><em><strong>Registrate!</strong></em></h2>
+  <div align="center"><input type="button" value="Registrate" onclick="location.href='/registrar'" class ="boton_personalizado"></div>
+  <h2 style="text-align:center; text-shadow:1px 1px 0 #444; color:purple;" font-family: "Bodoni"><em><strong>🡳  Busca Tu Pyme Aquí! 🡳</strong></em></h2>
+  <p></p>
+  <p></p>
+  <div class="button-container" align="center">
+    <form action ="/resultado_busqueda/" method ="GET" style= "text-align:center">
+      
+      <input type= "text" name = "prd" placeholder="Nombre de la Pyme" style="text-align:center" require> 
+      
+      
+      <input type="submit" value="Buscar">
+      
+    </form>
+    <form action ="/resultado_busqueda2/" method ="GET" style= "text-align:center">
+      
+      <input type= "text" name = "prb" placeholder="Categoría" style="text-align:center" require> 
+      
+      
+      <input type="submit" value="Buscar">
+
+    </form>
+  </div>
+>>>>>>> Stashed changes
   
 
   <!-- Barra De Busqueda.-->
